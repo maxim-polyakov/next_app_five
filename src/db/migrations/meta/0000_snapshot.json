@@ -1,5 +1,5 @@
 {
-  "id": "a54a2411-08cd-49e0-9f71-b5692150b31a",
+  "id": "ef06ec9f-762c-4286-aaa6-4fd8a7d0dd19",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -8,14 +8,8 @@
       "name": "messages",
       "schema": "",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "first_name": {
-          "name": "first_name",
+        "message": {
+          "name": "message",
           "type": "varchar",
           "primaryKey": false,
           "notNull": true
