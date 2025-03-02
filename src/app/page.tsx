@@ -2,9 +2,6 @@
 import Image from "next/image";
 import {useState} from "react";
 
-
-
-
 export default function Home() {
     const [value, setValue] = useState('');
     async function postData(url = 'localhost:3000/api', data = {value}) {
@@ -16,8 +13,8 @@ export default function Home() {
         const json = await response.json();
         return json
     }
-    async function getResponse (message){
-        postData('http://localhost:3000/api/', message)
+    async function getResponse (value){
+        postData('http://localhost:3000/api/', value)
             .then(res => {
                 alert(res.body)
             })
@@ -33,8 +30,8 @@ export default function Home() {
                     height={38}
                     priority
                 />
-                <input type="text" placeholder="Number" name="item_number" required onChange={(e)=>setValue(e.target.value)}/>
-                <button onClick={(e)=>getResponse({value})}>Send POST</button>
+                <input type="text" placeholder="Message" name="item_number" required onChange={(e)=>setValue(e.target.value)}/>
+                <button onClick={()=>getResponse({value})}>Send POST</button>
             </main>
         </div>
     );

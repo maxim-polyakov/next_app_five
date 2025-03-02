@@ -4,8 +4,11 @@ import {db} from "@/db";
 import {messages} from "@/db/schema";
 
 export  async  function GET() {
+    const data = await db
+        .select()
+        .from(messages)
     return NextResponse.json({
-        hello: "world",
+        data
     });
 }
 
